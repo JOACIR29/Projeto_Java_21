@@ -33,8 +33,8 @@ public class Product {
     public Product() {
     }
 
-    public Product(Long is, String name, String description, Double price, String imgUrl, Set<Category> categories) {
-        this.id = is;
+    public Product(Long id, String name, String description, Double price, String imgUrl, Set<Category> categories) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
@@ -42,11 +42,11 @@ public class Product {
         this.categories = categories;
     }
 
-    public Long getIs() {
+    public Long getId() {
         return id;
     }
 
-    public void setIs(Long is) {
+    public void setId(Long is) {
         this.id = is;
     }
 
