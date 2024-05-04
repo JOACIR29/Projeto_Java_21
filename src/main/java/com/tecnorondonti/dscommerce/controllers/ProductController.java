@@ -1,7 +1,9 @@
 package com.tecnorondonti.dscommerce.controllers;
 
+import com.tecnorondonti.dscommerce.dto.CustomError;
 import com.tecnorondonti.dscommerce.dto.ProductDTO;
 import com.tecnorondonti.dscommerce.services.ProductService;
+import com.tecnorondonti.dscommerce.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.time.Instant;
 
 @RestController
 @RequestMapping(value = "/products")
@@ -45,7 +48,7 @@ public class ProductController {
     }
 
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<ProductDTO> update(@PathVariable Long id) {
+    public ResponseEntity<ProductDTO> delete(@PathVariable Long id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
